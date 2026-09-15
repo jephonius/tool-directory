@@ -71,7 +71,7 @@ export default async function ToolPage({ params }) {
           <p className="text-gray-700">{tool.pricingSummary}</p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            
+            <a
               href={tool.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
