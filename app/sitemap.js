@@ -1,7 +1,7 @@
 import toolsData from "../data.json";
 
 export default function sitemap() {
-  const baseUrl = "https://your-site-name.vercel.app";
+     const baseUrl = "https://tool-directory-eight.vercel.app";
 
   const toolUrls = toolsData.map((tool) => ({
     url: `${baseUrl}/tool/${tool.id}`,
