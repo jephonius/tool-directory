@@ -51,7 +51,28 @@ export default async function AlternativesPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <header className="bg-primary text-cream">
+      <header className="relative bg-primary text-cream">
+        <Link
+  href="/"
+  className="absolute top-5 right-5 sm:right-8 inline-flex items-center gap-2 py-2 text-sm sm:text-base font-medium text-cream/90 hover:text-cream hover:underline underline-offset-4 transition"
+>
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M3 11l9-8 9 8" />
+    <path d="M5 10v10h14V10" />
+    <path d="M10 20v-6h4v6" />
+  </svg>
+  Home
+</Link>
         <div className="max-w-4xl mx-auto px-4 py-16 sm:py-20">
           <div className="mb-6 h-1.5 w-16 rounded-full bg-accent"></div>
           <h1 className="text-4xl sm:text-5xl font-bold">
