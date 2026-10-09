@@ -45,18 +45,19 @@ export default async function AlternativesPage({ params }) {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-cream">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <header className="bg-slate-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 py-10">
-          <h1 className="text-3xl sm:text-4xl font-bold">
+      <header className="bg-primary text-cream">
+        <div className="max-w-4xl mx-auto px-4 py-16 sm:py-20">
+          <div className="mb-6 h-1.5 w-16 rounded-full bg-accent"></div>
+          <h1 className="text-4xl sm:text-5xl font-bold">
             {alternativeTools.length} Best {tool.name} Alternatives in 2026
           </h1>
-          <p className="mt-3 text-slate-300">
+          <p className="mt-4 text-lg sm:text-xl">
             Comparing the top tools people switch to instead of {tool.name}.
           </p>
         </div>
@@ -65,29 +66,31 @@ export default async function AlternativesPage({ params }) {
       <section className="max-w-4xl mx-auto px-4 py-10">
         <ol className="space-y-6">
           {alternativeTools.map((alt, index) => (
-            <li key={alt.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <li key={alt.id} className="bg-white/60 rounded-2xl shadow-sm border border-gray-200 p-8">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <span className="text-sm font-medium text-slate-500">#{index + 1}</span>
-                  <h2 className="text-xl font-semibold text-slate-900 mt-1">
+                  <span className="inline-block rounded-full bg-accent px-3 py-0.5 text-sm font-medium text-gray-900">
+                    #{index + 1}
+                  </span>
+                  <h2 className="text-2xl font-bold text-primary mt-3">
                     <Link href={`/tool/${alt.id}`} className="hover:underline">
                       {alt.name}
                     </Link>
                   </h2>
-                  <p className="mt-1 text-gray-600">{alt.tagline}</p>
+                  <p className="mt-2 text-gray-900">{alt.tagline}</p>
                 </div>
-                <span className="whitespace-nowrap text-sm font-medium text-slate-700 bg-slate-100 px-3 py-1 rounded-full">
+                <span className="whitespace-nowrap text-sm font-medium text-cream bg-primary px-3 py-1 rounded-md">
                   {alt.pricingSummary}
                 </span>
               </div>
 
               {tool.switchReasons && tool.switchReasons[alt.id] && (
-                <p className="mt-4 text-gray-700 border-t border-gray-100 pt-4">
+                <p className="mt-4 text-gray-900 border-t border-gray-200 pt-4">
                   {tool.switchReasons[alt.id]}
                 </p>
               )}
 
-              <Link href={`/tool/${alt.id}`} className="mt-4 inline-block text-sm font-medium text-slate-900 hover:underline">
+              <Link href={`/tool/${alt.id}`} className="mt-4 inline-block text-sm font-medium text-primary hover:underline">
                 View full {alt.name} profile →
               </Link>
             </li>
@@ -96,16 +99,16 @@ export default async function AlternativesPage({ params }) {
 
         {relatedTools.length > 0 && (
           <div className="mt-10">
-            <h2 className="text-lg font-semibold text-slate-900 mb-4">Related tools in this category</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4">Related tools in this category</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {relatedTools.map((related) => (
                 <Link
                   key={related.id}
                   href={`/tool/${related.id}`}
-                  className="block bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md hover:border-slate-300 transition"
+                  className="block bg-white/60 rounded-2xl border border-gray-200 p-6 hover:shadow-md hover:border-primary transition"
                 >
-                  <h3 className="font-medium text-slate-900">{related.name}</h3>
-                  <p className="mt-1 text-sm text-gray-600 line-clamp-2">{related.tagline}</p>
+                  <h3 className="text-lg font-bold text-primary">{related.name}</h3>
+                  <p className="mt-2 text-sm text-gray-900 line-clamp-2">{related.tagline}</p>
                 </Link>
               ))}
             </div>
