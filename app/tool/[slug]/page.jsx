@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
   const tool = toolsData.find((t) => t.id === slug);
   if (!tool) return {};
   return {
-    title: tool.metaTitle,
+    title: `${tool.name}: Features & Pricing (2026)`,
     description: tool.metaDescription,
   };
 }
