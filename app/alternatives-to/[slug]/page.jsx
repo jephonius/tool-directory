@@ -109,9 +109,9 @@ export default async function AlternativesPage({ params }) {
       <section className="max-w-4xl mx-auto px-4 py-10">
         <ol className="space-y-6">
           {alternativeTools.map((alt, index) => (
-            <li key={alt.id} className="bg-white/60 rounded-2xl shadow-sm border border-gray-200 p-8">
-              <div className="flex items-start justify-between gap-4">
-                <div>
+            <li key={alt.id} className="bg-white/60 rounded-2xl shadow-sm border border-gray-200 p-5 sm:p-8">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                <div className="min-w-0">
                   <span className="inline-block rounded-full bg-accent px-3 py-0.5 text-sm font-medium text-gray-900">
                     #{index + 1}
                   </span>
@@ -122,7 +122,7 @@ export default async function AlternativesPage({ params }) {
                   </h2>
                   <p className="mt-2 text-gray-900">{alt.tagline}</p>
                 </div>
-                <span className="whitespace-nowrap text-sm font-medium text-cream bg-primary px-3 py-1 rounded-md">
+                <span className="self-start text-sm font-medium text-cream bg-primary px-3 py-1 rounded-md sm:whitespace-nowrap">
                   {alt.pricingSummary}
                 </span>
               </div>
